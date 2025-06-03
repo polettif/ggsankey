@@ -38,7 +38,7 @@ find_default_space <- function(.df) {
 }
 
 sigmoid <- function(x_from, x_to, y_from, y_to, smooth = 5, n = 300) {
-  x <- seq(-smooth, smooth, length = n)
+  x <- seq(-smooth, smooth, length.out = n)
   y <- exp(x) / (exp(x) + 1)
   out <- data.frame(x = (x + smooth) / (smooth * 2) * (x_to - x_from) + x_from,
                     y = y * (y_to - y_from) + y_from)
